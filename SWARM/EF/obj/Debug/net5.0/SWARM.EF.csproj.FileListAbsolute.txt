@@ -1,0 +1,12 @@
+C:\Users\Jtene\source\repos\SWARM\EF\bin\Debug\net5.0\SWARM.EF.deps.json
+C:\Users\Jtene\source\repos\SWARM\EF\bin\Debug\net5.0\SWARM.EF.dll
+C:\Users\Jtene\source\repos\SWARM\EF\bin\Debug\net5.0\ref\SWARM.EF.dll
+C:\Users\Jtene\source\repos\SWARM\EF\bin\Debug\net5.0\SWARM.EF.pdb
+C:\Users\Jtene\source\repos\SWARM\EF\obj\Debug\net5.0\SWARM.EF.csproj.AssemblyReference.cache
+C:\Users\Jtene\source\repos\SWARM\EF\obj\Debug\net5.0\SWARM.EF.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jtene\source\repos\SWARM\EF\obj\Debug\net5.0\SWARM.EF.AssemblyInfoInputs.cache
+C:\Users\Jtene\source\repos\SWARM\EF\obj\Debug\net5.0\SWARM.EF.AssemblyInfo.cs
+C:\Users\Jtene\source\repos\SWARM\EF\obj\Debug\net5.0\SWARM.EF.csproj.CoreCompileInputs.cache
+C:\Users\Jtene\source\repos\SWARM\EF\obj\Debug\net5.0\SWARM.EF.dll
+C:\Users\Jtene\source\repos\SWARM\EF\obj\Debug\net5.0\ref\SWARM.EF.dll
+C:\Users\Jtene\source\repos\SWARM\EF\obj\Debug\net5.0\SWARM.EF.pdb

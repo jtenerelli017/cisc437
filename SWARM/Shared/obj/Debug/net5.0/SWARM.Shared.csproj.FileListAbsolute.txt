@@ -1,0 +1,12 @@
+C:\Users\Jtene\source\repos\SWARM\Shared\bin\Debug\net5.0\SWARM.Shared.deps.json
+C:\Users\Jtene\source\repos\SWARM\Shared\bin\Debug\net5.0\SWARM.Shared.dll
+C:\Users\Jtene\source\repos\SWARM\Shared\bin\Debug\net5.0\ref\SWARM.Shared.dll
+C:\Users\Jtene\source\repos\SWARM\Shared\bin\Debug\net5.0\SWARM.Shared.pdb
+C:\Users\Jtene\source\repos\SWARM\Shared\obj\Debug\net5.0\SWARM.Shared.csproj.AssemblyReference.cache
+C:\Users\Jtene\source\repos\SWARM\Shared\obj\Debug\net5.0\SWARM.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jtene\source\repos\SWARM\Shared\obj\Debug\net5.0\SWARM.Shared.AssemblyInfoInputs.cache
+C:\Users\Jtene\source\repos\SWARM\Shared\obj\Debug\net5.0\SWARM.Shared.AssemblyInfo.cs
+C:\Users\Jtene\source\repos\SWARM\Shared\obj\Debug\net5.0\SWARM.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Jtene\source\repos\SWARM\Shared\obj\Debug\net5.0\SWARM.Shared.dll
+C:\Users\Jtene\source\repos\SWARM\Shared\obj\Debug\net5.0\ref\SWARM.Shared.dll
+C:\Users\Jtene\source\repos\SWARM\Shared\obj\Debug\net5.0\SWARM.Shared.pdb
