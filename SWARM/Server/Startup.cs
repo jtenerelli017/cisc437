@@ -10,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using System.Linq;
 using SWARM.Server.Data;
 using SWARM.Server.Models;
+using SWARM.EF.Data;
 
 namespace SWARM.Server
 {
@@ -28,7 +29,14 @@ namespace SWARM.Server
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseOracle(
-                    Configuration.GetConnectionString("SWARMConnection")));
+                    Configuration.GetConnectionString("SwarmOracleConnection")));
+
+            services.AddDbContext<SWARMOracleContext>(options =>
+                options.UseOracle(
+                    Configuration.GetConnectionString("SwarmOracleConnection")));
+
+            services.AddControllers().AddNewtonsoftJson(options =>
+                    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -41,8 +49,13 @@ namespace SWARM.Server
             services.AddAuthentication()
                 .AddIdentityServerJwt();
 
+
+
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

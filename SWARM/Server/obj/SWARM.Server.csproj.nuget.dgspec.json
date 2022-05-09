@@ -1,38 +1,43 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jtene\\source\\repos\\SWARM\\Server\\SWARM.Server.csproj": {}
+    "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\Server\\SWARM.Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jtene\\source\\repos\\SWARM\\Client\\SWARM.Client.csproj": {
+    "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\Client\\SWARM.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jtene\\source\\repos\\SWARM\\Client\\SWARM.Client.csproj",
+        "projectUniqueName": "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\Client\\SWARM.Client.csproj",
         "projectName": "SWARM.Client",
-        "projectPath": "C:\\Users\\Jtene\\source\\repos\\SWARM\\Client\\SWARM.Client.csproj",
+        "projectPath": "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\Client\\SWARM.Client.csproj",
         "packagesPath": "C:\\Users\\Jtene\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jtene\\source\\repos\\SWARM\\Client\\obj\\",
+        "outputPath": "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\Client\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Jtene\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Telerik UI for WPF.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Jtene\\source\\repos\\SWARM\\EF\\SWARM.EF.csproj": {
-                "projectPath": "C:\\Users\\Jtene\\source\\repos\\SWARM\\EF\\SWARM.EF.csproj"
+              "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\EF\\SWARM.EF.csproj": {
+                "projectPath": "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\EF\\SWARM.EF.csproj"
               },
-              "C:\\Users\\Jtene\\source\\repos\\SWARM\\Shared\\SWARM.Shared.csproj": {
-                "projectPath": "C:\\Users\\Jtene\\source\\repos\\SWARM\\Shared\\SWARM.Shared.csproj"
+              "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\Shared\\SWARM.Shared.csproj": {
+                "projectPath": "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\Shared\\SWARM.Shared.csproj"
               }
             }
           }
@@ -49,28 +54,40 @@
           "dependencies": {
             "Microsoft.AspNetCore.Components.WebAssembly": {
               "target": "Package",
-              "version": "[5.0.15, )"
+              "version": "[5.0.13, )"
             },
             "Microsoft.AspNetCore.Components.WebAssembly.Authentication": {
               "target": "Package",
-              "version": "[5.0.15, )"
+              "version": "[5.0.13, )"
             },
             "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.15, )"
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.Extensions.Caching.Memory": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             },
             "Microsoft.Extensions.Http": {
               "target": "Package",
               "version": "[5.0.0, )"
             },
-            "Oracle.EntityFrameworkCore": {
+            "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[5.21.5, )"
+              "version": "[13.0.1, )"
             },
             "System.Net.Http.Json": {
               "target": "Package",
               "version": "[5.0.0, )"
+            },
+            "Telerik.UI.for.Blazor.Trial": {
+              "target": "Package",
+              "version": "[3.2.0, )"
             }
           },
           "imports": [
@@ -103,25 +120,30 @@
         }
       }
     },
-    "C:\\Users\\Jtene\\source\\repos\\SWARM\\EF\\SWARM.EF.csproj": {
+    "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\EF\\SWARM.EF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jtene\\source\\repos\\SWARM\\EF\\SWARM.EF.csproj",
+        "projectUniqueName": "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\EF\\SWARM.EF.csproj",
         "projectName": "SWARM.EF",
-        "projectPath": "C:\\Users\\Jtene\\source\\repos\\SWARM\\EF\\SWARM.EF.csproj",
+        "projectPath": "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\EF\\SWARM.EF.csproj",
         "packagesPath": "C:\\Users\\Jtene\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jtene\\source\\repos\\SWARM\\EF\\obj\\",
+        "outputPath": "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\EF\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Jtene\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Telerik UI for WPF.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
@@ -163,38 +185,43 @@
         }
       }
     },
-    "C:\\Users\\Jtene\\source\\repos\\SWARM\\Server\\SWARM.Server.csproj": {
+    "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\Server\\SWARM.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jtene\\source\\repos\\SWARM\\Server\\SWARM.Server.csproj",
+        "projectUniqueName": "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\Server\\SWARM.Server.csproj",
         "projectName": "SWARM.Server",
-        "projectPath": "C:\\Users\\Jtene\\source\\repos\\SWARM\\Server\\SWARM.Server.csproj",
+        "projectPath": "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\Server\\SWARM.Server.csproj",
         "packagesPath": "C:\\Users\\Jtene\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jtene\\source\\repos\\SWARM\\Server\\obj\\",
+        "outputPath": "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\Server\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Jtene\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Telerik UI for WPF.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Jtene\\source\\repos\\SWARM\\Client\\SWARM.Client.csproj": {
-                "projectPath": "C:\\Users\\Jtene\\source\\repos\\SWARM\\Client\\SWARM.Client.csproj"
+              "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\Client\\SWARM.Client.csproj": {
+                "projectPath": "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\Client\\SWARM.Client.csproj"
               },
-              "C:\\Users\\Jtene\\source\\repos\\SWARM\\EF\\SWARM.EF.csproj": {
-                "projectPath": "C:\\Users\\Jtene\\source\\repos\\SWARM\\EF\\SWARM.EF.csproj"
+              "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\EF\\SWARM.EF.csproj": {
+                "projectPath": "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\EF\\SWARM.EF.csproj"
               },
-              "C:\\Users\\Jtene\\source\\repos\\SWARM\\Shared\\SWARM.Shared.csproj": {
-                "projectPath": "C:\\Users\\Jtene\\source\\repos\\SWARM\\Shared\\SWARM.Shared.csproj"
+              "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\Shared\\SWARM.Shared.csproj": {
+                "projectPath": "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\Shared\\SWARM.Shared.csproj"
               }
             }
           }
@@ -229,6 +256,10 @@
               "target": "Package",
               "version": "[5.0.15, )"
             },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[5.0.15, )"
@@ -236,10 +267,6 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[5.0.15, )"
-            },
-            "Oracle.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[5.21.5, )"
             }
           },
           "imports": [
@@ -264,25 +291,30 @@
         }
       }
     },
-    "C:\\Users\\Jtene\\source\\repos\\SWARM\\Shared\\SWARM.Shared.csproj": {
+    "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\Shared\\SWARM.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jtene\\source\\repos\\SWARM\\Shared\\SWARM.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\Shared\\SWARM.Shared.csproj",
         "projectName": "SWARM.Shared",
-        "projectPath": "C:\\Users\\Jtene\\source\\repos\\SWARM\\Shared\\SWARM.Shared.csproj",
+        "projectPath": "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\Shared\\SWARM.Shared.csproj",
         "packagesPath": "C:\\Users\\Jtene\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jtene\\source\\repos\\SWARM\\Shared\\obj\\",
+        "outputPath": "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\Shared\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Jtene\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Telerik UI for WPF.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
@@ -299,6 +331,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Telerik.DataSource.Trial": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

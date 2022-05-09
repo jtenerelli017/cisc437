@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using SWARM.Client.Services;
 
 namespace SWARM.Client
 {
@@ -24,6 +25,8 @@ namespace SWARM.Client
             // Supply HttpClient instances that include access tokens when making requests to the server project
             builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("SWARM.ServerAPI"));
 
+
+            builder.Services.AddScoped<CourseService>();
             builder.Services.AddApiAuthorization();
 
             await builder.Build().RunAsync();

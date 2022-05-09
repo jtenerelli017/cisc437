@@ -1,28 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jtene\\source\\repos\\SWARM\\Shared\\SWARM.Shared.csproj": {}
+    "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\Shared\\SWARM.Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jtene\\source\\repos\\SWARM\\Shared\\SWARM.Shared.csproj": {
+    "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\Shared\\SWARM.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jtene\\source\\repos\\SWARM\\Shared\\SWARM.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\Shared\\SWARM.Shared.csproj",
         "projectName": "SWARM.Shared",
-        "projectPath": "C:\\Users\\Jtene\\source\\repos\\SWARM\\Shared\\SWARM.Shared.csproj",
+        "projectPath": "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\Shared\\SWARM.Shared.csproj",
         "packagesPath": "C:\\Users\\Jtene\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jtene\\source\\repos\\SWARM\\Shared\\obj\\",
+        "outputPath": "C:\\Users\\Jtene\\Documents\\repos\\SWARM\\Shared\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Jtene\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Telerik UI for WPF.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
@@ -39,6 +44,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Telerik.DataSource.Trial": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

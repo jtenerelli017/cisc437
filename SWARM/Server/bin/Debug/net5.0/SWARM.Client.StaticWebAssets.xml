@@ -1,5 +1,6 @@
 ﻿<StaticWebAssets Version="1.0">
-  <ContentRoot BasePath="/" Path="C:\Users\Jtene\source\repos\SWARM\Client\bin\Debug\net5.0\wwwroot\" />
-  <ContentRoot BasePath="/" Path="C:\Users\Jtene\source\repos\SWARM\Client\obj\Debug\net5.0\scopedcss\bundle\" />
-  <ContentRoot BasePath="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication" Path="C:\Users\Jtene\.nuget\packages\microsoft.aspnetcore.components.webassembly.authentication\5.0.15\build\..\staticwebassets\" />
+  <ContentRoot BasePath="/" Path="C:\Users\Jtene\Documents\repos\SWARM\Client\bin\Debug\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Users\Jtene\Documents\repos\SWARM\Client\obj\Debug\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication" Path="C:\Users\Jtene\.nuget\packages\microsoft.aspnetcore.components.webassembly.authentication\5.0.13\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/Telerik.UI.for.Blazor.Trial" Path="C:\Users\Jtene\.nuget\packages\telerik.ui.for.blazor.trial\3.2.0\build\..\staticwebassets\" />
 </StaticWebAssets>

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SWARM.Server.Data
 {
-    public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
+    public partial class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
     {
         public ApplicationDbContext(
             DbContextOptions options,
