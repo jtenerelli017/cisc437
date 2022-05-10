@@ -32,49 +32,96 @@ namespace SWARM.Server.Controllers.Crse
         }
 
         [HttpGet]
-        [Route("GetCourses")]
-        public async Task<IActionResult> GetCourses()
+        [Route("GetCourse/{pCourseNo, pSchoolId}")]
+        public async Task<IActionResult> GetCourse(int pCourseNo, int pSchoolId)
         {
-            List<Course> lstCourses = await _context.Courses.OrderBy(x => x.CourseNo).ToListAsync();
-            return Ok(lstCourses);
-        }
+            Course itmCourse = await _context.Courses
+                .Where(
+                    x => x.CourseNo == pCourseNo
+                    && x.SchoolId == pSchoolId
+                ).FirstOrDefaultAsync();
 
-        [HttpGet]
-        [Route("GetCourses/{pCourseNo}")]
-        public async Task<IActionResult> GetCourse(int pCourseNo)
-        {
-            Course itmCourse = await _context.Courses.Where(x => x.CourseNo == pCourseNo).FirstOrDefaultAsync();
             return Ok(itmCourse);
         }
 
         [HttpDelete]
-        [Route("DeleteCourse/{pCourseNo}")]
-        public async Task<IActionResult> DeleteCourse(int pCourseNo)
+        [Route("DeleteCourse/{pCourseNo, pSchoolId}")]
+        public async Task<IActionResult> DeleteCourse(int pCourseNo, int pSchoolId)
         {
-            Course itmCourse = await _context.Courses.Where(x => x.CourseNo == pCourseNo).FirstOrDefaultAsync();
+            var enrollment = await _context.Enrollments
+                .Include("section")
+                .Include("course")
+                .Where(
+                    x => x.S.CourseNo == pCourseNo
+                    && x.S.SchoolId == pSchoolId
+                ).ToListAsync();
+            foreach (var enr in enrollment)
+            {
+                _context.Enrollments.Remove(enr);
+            }
+
+            var section = await _context.Sections
+                .Include("course")
+                .Where(
+                    x => x.CourseNo == pCourseNo
+                    && x.SchoolId == pSchoolId
+                ).ToListAsync();
+            foreach (var sec in section)
+            {
+                _context.Sections.Remove(sec);
+            }
+
+            Course itmCourse = await _context.Courses
+                .Where(
+                    x => x.CourseNo == pCourseNo
+                    && x.SchoolId == pSchoolId
+                ).FirstOrDefaultAsync();
             _context.Remove(itmCourse);
+
             await _context.SaveChangesAsync();
             return Ok();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Post([FromBody] CourseDTO _CourseDTO)
+        [HttpPut]
+        public async Task<IActionResult> Put([FromBody] Course _Course)
         {
+            bool bExist = false;
+
             var trans = _context.Database.BeginTransaction();
             try
             {
-                var existCourse = await _context.Courses.Where(x => x.CourseNo == _CourseDTO.CourseNo).FirstOrDefaultAsync();
+                var _Crse = await _context.Courses
+                    .Where(
+                        x => x.CourseNo == _Course.CourseNo
+                        && x.SchoolId == _Course.SchoolId
+                    ).FirstOrDefaultAsync();
+                if (_Crse == null)
+                {
+                    bExist = false;
+                    _Crse = new Course();
+                }
+                else
+                    bExist = true;
 
-                existCourse.Cost = _CourseDTO.Cost;
-                existCourse.Description = _CourseDTO.Description;
-                existCourse.Prerequisite = _CourseDTO.Prerequisite;
-                existCourse.PrerequisiteSchoolId = _CourseDTO.PrerequisiteSchoolId;
-                existCourse.SchoolId = _CourseDTO.SchoolId;
-                _context.Update(existCourse);
+                _Crse.CourseNo = _Course.CourseNo;
+                _Crse.Description = _Course.Description;
+                _Crse.Cost = _Course.Cost;
+                _Crse.Prerequisite = _Course.Prerequisite;
+                _Crse.CreatedBy = _Course.CreatedBy;
+                _Crse.CreatedDate = _Course.CreatedDate;
+                _Crse.ModifiedBy = _Course.ModifiedBy;
+                _Crse.ModifiedDate = _Course.ModifiedDate;
+                _Crse.SchoolId = _Course.SchoolId;
+                _Crse.PrerequisiteSchoolId = _Course.PrerequisiteSchoolId;
+                if (bExist)
+                    _context.Courses.Update(_Crse);
+                else
+                    _context.Courses.Add(_Crse);
+                _context.Update(_Crse);
                 await _context.SaveChangesAsync();
                 trans.Commit();
 
-                return Ok(_CourseDTO.CourseNo);
+                return Ok(_Crse.CourseNo);
             }
             catch (Exception ex)
             {
@@ -83,64 +130,44 @@ namespace SWARM.Server.Controllers.Crse
             }
         }
 
-
-
         [HttpPost]
-        [Route("GetCourses")]
-        public async Task<DataEnvelope<CourseDTO>> GetCoursesPost([FromBody] DataSourceRequest gridRequest)
+        public async Task<IActionResult> Post([FromBody] Course _Course)
         {
-            DataEnvelope<CourseDTO> dataToReturn = null;
-            IQueryable<CourseDTO> queriableStates = _context.Courses
-                    .Select(sp => new CourseDTO
-                    {
-                        Cost = sp.Cost,
-                        CourseNo = sp.CourseNo,
-                        CreatedBy = sp.CreatedBy,
-                        CreatedDate = sp.CreatedDate,
-                        Description = sp.Description,
-                        ModifiedBy = sp.ModifiedBy,
-                        ModifiedDate = sp.ModifiedDate,
-                        Prerequisite = sp.Prerequisite,
-                        PrerequisiteSchoolId = sp.PrerequisiteSchoolId,
-                        SchoolId = sp.SchoolId
-                    });
-
-            // use the Telerik DataSource Extensions to perform the query on the data
-            // the Telerik extension methods can also work on "regular" collections like List<T> and IQueriable<T>
+            var trans = _context.Database.BeginTransaction();
             try
             {
-
-                DataSourceResult processedData = await queriableStates.ToDataSourceResultAsync(gridRequest);
-
-                if (gridRequest.Groups.Count > 0)
+                var _Crse = await _context.Courses
+                    .Where(
+                        x => x.CourseNo == _Course.CourseNo
+                        && x.SchoolId == _Course.SchoolId
+                    ).FirstOrDefaultAsync();
+                if (_Crse != null)
+                    return StatusCode(StatusCodes.Status500InternalServerError, "Record already exists");
+                _Crse = new Course
                 {
-                    // If there is grouping, use the field for grouped data
-                    // The app must be able to serialize and deserialize it
-                    // Example helper methods for this are available in this project
-                    // See the GroupDataHelper.DeserializeGroups and JsonExtensions.Deserialize methods
-                    dataToReturn = new DataEnvelope<CourseDTO>
-                    {
-                        GroupedData = processedData.Data.Cast<AggregateFunctionsGroup>().ToList(),
-                        TotalItemCount = processedData.Total
-                    };
-                }
-                else
-                {
-                    // When there is no grouping, the simplistic approach of 
-                    // just serializing and deserializing the flat data is enough
-                    dataToReturn = new DataEnvelope<CourseDTO>
-                    {
-                        CurrentPageData = processedData.Data.Cast<CourseDTO>().ToList(),
-                        TotalItemCount = processedData.Total
-                    };
-                }
+                    CourseNo = _Course.CourseNo,
+                    Description = _Course.Description,
+                    Cost = _Course.Cost,
+                    Prerequisite = _Course.Prerequisite,
+                    CreatedBy = _Course.CreatedBy,
+                    CreatedDate = _Course.CreatedDate,
+                    ModifiedBy = _Course.ModifiedBy,
+                    ModifiedDate = _Course.ModifiedDate,
+                    SchoolId = _Course.SchoolId,
+                    PrerequisiteSchoolId = _Course.PrerequisiteSchoolId
+                };
+                _context.Courses.Add(_Crse);
+
+                await _context.SaveChangesAsync();
+                trans.Commit();
+
+                return Ok(_Crse.CourseNo);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                //fixme add decent exception handling
+                trans.Rollback();
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
-            return dataToReturn;
         }
-
     }
 }
