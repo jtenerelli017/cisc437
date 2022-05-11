@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Telerik.DataSource.Extensions;
 
-namespace SWARM.Server.Controllers.Enr
+namespace SWARM.Server.Controllers.GrdTp
 {
     [Route("api/[controller]")]
     [ApiController]
