@@ -40,29 +40,6 @@ namespace SWARM.Server.Controllers.Crse
         [Route("DeleteCourse/{pCourseNo, pSchoolId}")]
         public async Task<IActionResult> DeleteCourse(int pCourseNo, int pSchoolId)
         {
-            var enrollment = await _context.Enrollments
-                .Include("section")
-                .Include("course")
-                .Where(
-                    x => x.S.CourseNo == pCourseNo
-                    && x.S.SchoolId == pSchoolId
-                ).ToListAsync();
-            foreach (var enr in enrollment)
-            {
-                _context.Enrollments.Remove(enr);
-            }
-
-            var section = await _context.Sections
-                .Include("course")
-                .Where(
-                    x => x.CourseNo == pCourseNo
-                    && x.SchoolId == pSchoolId
-                ).ToListAsync();
-            foreach (var sec in section)
-            {
-                _context.Sections.Remove(sec);
-            }
-
             Course itmCourse = await _context.Courses
                 .Where(
                     x => x.CourseNo == pCourseNo
@@ -109,7 +86,7 @@ namespace SWARM.Server.Controllers.Crse
                     _context.Courses.Update(_Crse);
                 else
                     _context.Courses.Add(_Crse);
-                _context.Update(_Crse);
+                
                 await _context.SaveChangesAsync();
                 trans.Commit();
 

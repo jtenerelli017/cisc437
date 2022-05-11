@@ -41,18 +41,6 @@ namespace SWARM.Server.Controllers.Enr
         [Route("DeleteEnrollment/{pStudentId, pSectionId, pSchoolId}")]
         public async Task<IActionResult> DeleteEnrollment(int pStudentId, int pSectionId, int pSchoolId)
         {
-            var grade = await _context.Grades
-                .Include("enrollment")
-                .Where(
-                    x => x.StudentId == pStudentId
-                    && x.SectionId == pSectionId
-                    && x.SchoolId == pSchoolId
-                ).ToListAsync();
-            foreach (var grd in grade)
-            {
-                _context.Grades.Remove(grd);
-            }
-
             Enrollment itmEnrollment = await _context.Enrollments
                 .Where(
                     x => x.StudentId == pStudentId
@@ -97,14 +85,14 @@ namespace SWARM.Server.Controllers.Enr
                 _Enr.ModifiedDate = _Enrollment.ModifiedDate;
                 _Enr.SchoolId = _Enrollment.SchoolId;
                 if (bExist)
-                    _context.Enrollments.Update(_Enrollment);
+                    _context.Enrollments.Update(_Enr);
                 else
-                    _context.Enrollments.Add(_Enrollment);
-                _context.Update(_Enrollment);
+                    _context.Enrollments.Add(_Enr);
+
                 await _context.SaveChangesAsync();
                 trans.Commit();
 
-                return Ok(_Enrollment.SectionId);
+                return Ok(_Enr.SectionId);
             }
             catch (Exception ex)
             {
